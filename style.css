@@ -1,0 +1,302 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing :border-box;
+}
+
+.container {
+    display: flex; 
+    align-items: flex-start;
+    margin: auto;
+    justify-content: space-between;
+    max-width: 1200px;
+    padding: 10px;
+}
+.leftpage, .rightpage {
+    flex: 1; /* Membagi area menjadi dua bagian yang sama besar */
+    padding: 20px;
+}
+h2 {
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.p1 {
+    font-size: 5em;
+    font-family: 'poppins';
+    font-weight: 200;
+ }
+
+.p2 {
+    font-size: 1.5em;
+    font-family: Trebuchet MS;
+    background-color: #6e7f80;
+    color: white;
+    border-radius: 50px;
+    white-space: normal;
+    display: inline-block;
+    padding: 15px 15px;
+    margin: 10px;
+} 
+
+.p3 {text-align: justify; }
+.p4 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+} 
+.p5 {
+    font-family: 'poppins';
+    font-size: 4em;
+    font-weight: 200;
+}
+body { 
+    background: linear-gradient(to right, #dde1e7, #c1c8e4);
+    color: #333;
+    padding-left: 40px;
+    font-family: 'poppins', sans-serif;
+    padding-top: 40px;
+    scroll-snap-type: y mandatory;
+    flex-direction: column;
+}
+section{
+    margin-top: 20px;
+    padding : 40px ;
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+
+a{ text-decoration: none; }
+
+/*untuk jarak pada navigasi*/
+.main-container {
+    max-width: 90%;
+    margin : 0 auto;
+}
+/*navigasi atau menu*/
+.nav {
+    position: sticky; /* Biar navbar tetap di atas */
+    top: 0; /* Tempel di bagian atas */
+    right: 0;
+    width: auto; /* Lebar penuh */
+    padding: 15px 20px; /* Padding agar tidak terlalu mepet */ 
+    z-index: 1000; /* Pastikan selalu di atas */
+}
+.nav ul{  
+    list-style: none;
+    display: flex;
+    gap: 3rem; /*48px*/
+    justify-content: flex-end;
+}
+
+.sukma{
+    color: brown;
+    overflow: hidden;
+    opacity: 0; /*teks awal nya ga keliatan*/
+    transform: translateX(-100%);
+    animation: slideIn 5s ease forwards; /*ini animasi nya*/
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0; /*teks transparan*/
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1; /*teks nya keliatan*/
+        transform: translateX(0);
+    }
+}
+.transisi1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    opacity: 0; /* Teks mulai dalam keadaan tidak terlihat */
+    transform: translateX(-100%); /* Teks dimulai di luar layar sebelah kiri */
+    transition: opacity 1s ease, transform 1s ease; /* Transisi untuk opacity dan transform */
+}
+.upn {
+    color: rgb(247, 170, 71);
+}
+
+/* Efek saat hover atau kondisi lainnya */
+.transisi1:hover {
+    opacity: 1; /* Teks terlihat */
+    transform: translateX(0); /* Teks bergerak ke posisi awal */
+}
+#home, #about {
+    margin-top: 20px;
+}
+#home .p1 {
+    margin-top: 50px;
+}
+
+.image {
+    text-align: center;
+    display: flex; /* Tata letak horizontal */
+    flex-direction: column; /* Susun gambar secara vertikal */
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.school img {
+    margin-bottom: 10px;
+    margin : 10px;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    border: 2px solid #7a7991; /* Border di sekeliling gambar */
+    padding: 4px; /* Jarak antara gambar dan border */
+    background-color: #f0f0f0; /* Warna latar belakang di sekitar gambar */
+    width: 100px; /* Lebar gambar */
+    height: 100px; /* Tinggi gambar (agar tetap proporsional) */
+    object-fit: cover;
+} 
+.school {
+    display: flex;
+    align-items: center; /* Agar teks sejajar dengan gambar */
+    gap: 10px; /* Jarak antara gambar dan teks */
+}
+.school a {
+    text-decoration: none;
+    color: rgb(8, 8, 9);
+}
+
+.school a:hover {
+    color: #697473;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+.schoolket {
+    font-size: 14px;
+    color: rgb(8, 8, 9);
+    font-family: sans-serif;
+    text-align:left ;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.schoolket:hover {
+    transform: scale(1.05);
+}
+.tebal {
+    font-weight: bold;
+}
+.profiles{
+    text-align: left; /* Posisikan ke bawah */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.profiles-button {
+    display: inline-block;
+    align-items: center; 
+    white-space: nowrap;
+    background-color: #6e7f80;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px; /* Membuat bentuk oval */
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.profiles-button:hover {
+    background-color: #48575f; /* Warna lebih gelap saat hover */
+    transform: scale(1.05); /* Efek sedikit membesar */
+}
+
+/*section CONTACT*/
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.2); /* Warna transparan elegan */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan lembut */
+    width: 250px;
+    margin: auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    color: #333;
+    font-size: 24px;
+    padding : 15px 30px;
+    border-radius: 10px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-item:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+/*AGAR RESPONSIV*/
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stack elemen ke bawah */
+        align-items: center;
+    }
+
+    .leftpage, .rightpage {
+        width: 100%; /* Agar full width */
+        text-align: center;
+    }
+
+    .p1 {
+        font-size: 3em; /* Ukuran lebih kecil di layar sempit */
+    }
+    .p2 {
+        font-size: 1.5em;
+    }
+
+    .p5 {
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact-item {
+        font-size: 18px; /* Ukuran font lebih kecil */
+    }
+    .p1 {
+        font-size: 2em;
+    }
+    .p2 {
+        font-size: 1em;
+        padding: 10px 12px;
+        border-radius: 30px;
+    }
+}
